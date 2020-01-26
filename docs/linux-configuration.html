@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Linux Configuration - rsapkf/goodies</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> goodies</a></li><li class="expanded "><a href="../index.html"><strong aria-hidden="true">2.</strong> docs/</a></li><li><ol class="section"><li class="expanded "><a href="../docs/web-development.html"><strong aria-hidden="true">2.1.</strong> Web Development</a></li><li class="expanded "><a href="../docs/coding-challenges.html"><strong aria-hidden="true">2.2.</strong> Coding Challenges</a></li><li class="expanded "><a href="../docs/linux-configuration.html" class="active"><strong aria-hidden="true">2.3.</strong> Linux Configuration</a></li><li class="expanded "><a href="../docs/science-technology-and-mathematics.html"><strong aria-hidden="true">2.4.</strong> Science, Technology and Mathematics</a></li><li class="expanded "><a href="../docs/software-tools.html"><strong aria-hidden="true">2.5.</strong> Software Tools</a></li><li class="expanded "><a href="../docs/moocs-and-courses.html"><strong aria-hidden="true">2.6.</strong> Massive Open Online Courses</a></li><li class="expanded "><a href="../docs/cubing-and-puzzles.html"><strong aria-hidden="true">2.7.</strong> Cubing and Puzzles</a></li><li class="expanded "><a href="../docs/random-cool-sites.html"><strong aria-hidden="true">2.8.</strong> Random Cool Sites</a></li><li class="expanded "><a href="../docs/privacy-tools.html"><strong aria-hidden="true">2.9.</strong> Privacy Tools</a></li><li class="expanded "><a href="../docs/github-gitlab-stars.html"><strong aria-hidden="true">2.10.</strong> GitHub/GitLab Stars</a></li><li class="expanded "><a href="../docs/free-to-read-books.html"><strong aria-hidden="true">2.11.</strong> Free to Read Books</a></li><li class="expanded "><a href="../docs/high-school.html"><strong aria-hidden="true">2.12.</strong> High School</a></li><li class="expanded "><a href="../docs/ebooks-and-research-papers.html"><strong aria-hidden="true">2.13.</strong> Ebooks and Research Papers</a></li><li class="spacer"></li></ol></li><li class="expanded "><a href="../CONTRIBUTING.html">CONTRIBUTING</a></li><li class="expanded affix "><a href="../LICENSE.html">LICENSE</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">rsapkf/goodies</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/rsapkf/goodies" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#linux-configuration" id="linux-configuration">Linux Configuration</a></h1>
+<h2><a class="header" href="#contents" id="contents">Contents</a></h2>
+<ul>
+<li><a href="#distros">Distros</a></li>
+<li><a href="#shell">Shell</a></li>
+<li><a href="#desktop-environments">Desktop Environments</a></li>
+<li><a href="#window-managers">Window Managers</a></li>
+<li><a href="#program-launchers">Program Launchers</a></li>
+<li><a href="#terminal-emulators">Terminal Emulators</a></li>
+<li><a href="#file-managers">File Managers</a>
+<ul>
+<li><a href="#command-line-file-managers">Command Line File Managers</a></li>
+<li><a href="#graphical-file-managers">Graphical File Managers</a></li>
+</ul>
+</li>
+<li><a href="#status-bars">Status Bars</a></li>
+<li><a href="#terminal-applications">Terminal Applications</a></li>
+<li><a href="#graphical-applications">Graphical Applications</a></li>
+<li><a href="#youtube-channels">YouTube Channels</a></li>
+<li><a href="#extra-resources">Extra Resources</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#distros" id="distros">Distros</a></h3>
+<ul>
+<li><a href="https://www.ubuntu.com/">Ubuntu</a>, <a href="https://mxlinux.org/">MX Linux</a>, <a href="https://xubuntu.org/">Xubuntu</a>, <a href="https://lubuntu.me/">Lubuntu</a>, <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://system76.com/pop">Pop!OS</a>, <a href="https://kubuntu.org/">Kubuntu</a></li>
+<li><a href="https://getfedora.org/">Fedora</a></li>
+<li><a href="https://opensuse.org/">OpenSUSE</a></li>
+<li><a href="https://nixos.org/">NixOS</a></li>
+<li><a href="https://getsol.us/home/">Solus</a></li>
+<li><a href="https://www.centos.org/">CentOS</a></li>
+<li><a href="https://www.debian.org/">Debian</a>, <a href="https://www.kali.org/">Kali</a></li>
+<li><a href="https://www.archlinux.org/">Arch</a>, <a href="https://manjaro.org/">Manjaro</a>, <a href="https://www.blackarch.org/">BlackArch</a></li>
+<li><a href="https://www.gentoo.org/">Gentoo</a>, <a href="https://www.funtoo.org/Welcome">Funtoo</a></li>
+<li><a href="https://voidlinux.org/">Void Linux</a></li>
+<li><a href="http://www.slackware.com/">Slackware</a></li>
+<li><a href="https://www.parrotsec.org/">Parrot OS</a></li>
+<li><a href="https://tails.boum.org/index.en.html">Tails</a></li>
+<li><a href="https://www.qubes-os.org/">Qubes OS</a></li>
+<li><a href="https://www.whonix.org/">Whonix</a></li>
+<li><a href="https://www.blackarch.org/">BlackArch Linux</a></li>
+<li><a href="https://elementary.io/">elementary OS</a></li>
+<li><a href="https://www.redhat.com/en">Red Hat</a></li>
+<li><a href="https://www.deepin.org/en/">Deepin</a></li>
+<li><a href="https://arcolinux.info/">ArcoLinux</a></li>
+<li><a href="https://trisquel.info/en">Trisquel GNU/Linux</a></li>
+<li><a href="https://www.parabola.nu/">Parabola GNU/Linux</a></li>
+<li><a href="https://alpinelinux.org/">Alpine Linux</a></li>
+<li><a href="http://www.linuxfromscratch.org/">Linux From Scratch</a></li>
+</ul>
+<p>See Also </p>
+<ul>
+<li><a href="https://distrowatch.com">DistroWatch</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Pacman/Rosetta">Pacman/Rosetta</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#shells" id="shells">Shells</a></h3>
+<ul>
+<li><a href="https://www.gnu.org/software/bash/manual/bash.html">Bash</a></li>
+<li><a href="http://zsh.sourceforge.net/">Zsh</a> See Also <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> and <a href="https://github.com/sorin-ionescu/prezto">prezto</a></li>
+<li><a href="https://github.com/fish-shell/fish-shell">fish</a> See Also <a href="https://github.com/oh-my-fish/oh-my-fish">oh-my-fish</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#desktop-environments" id="desktop-environments">Desktop Environments</a></h3>
+<ul>
+<li><a href="https://www.gnome.org">Gnome</a></li>
+<li><a href="https://kde.org">KDE</a></li>
+<li><a href="https://xfce.org">Xfce</a></li>
+<li><a href="https://github.com/linuxmint/Cinnamon">Cinnamon</a></li>
+<li><a href="https://mate-desktop.org/">MATE</a></li>
+<li><a href="https://lxqt.org/">LXQt</a></li>
+<li><a href="https://budgie-desktop.org/">Budgie</a></li>
+<li><a href="https://lxde.org/">LXDE</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Pantheon">Pantheon</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#window-managers" id="window-managers">Window Managers</a></h3>
+<ul>
+<li><a href="https://i3wm.org/">i3wm</a></li>
+<li><a href="https://github.com/Airblader/i3">i3-gaps</a> - i3 with more features.</li>
+<li><a href="https://github.com/swaywm/sway">sway</a> - i3-compatible Wayland compositor.</li>
+<li><a href="https://dwm.suckless.org/">dwm</a> See Also <a href="https://suckless.org/">suckless.org</a></li>
+<li><a href="https://github.com/baskerville/bspwm">bspwm</a></li>
+<li><a href="http://openbox.org/">openbox</a></li>
+<li><a href="https://awesomewm.org/">awesome</a></li>
+<li><a href="http://www.qtile.org/">qtile</a></li>
+<li><a href="http://www.xmonad.org/">xmonad</a></li>
+<li><a href="http://www.herbstluftwm.org/">herbstluftwm</a></li>
+<li><a href="https://github.com/stumpwm/stumpwm">stumpwm</a></li>
+</ul>
+<p>See Also <a href="https://www.youtube.com/playlist?list=PL5--8gKSku17lbSBHPduj4qG97qxJe0UM">The Obscure Window Manager Project(DistroTube)</a></p>
+<hr />
+<h3><a class="header" href="#program-launchers" id="program-launchers">Program Launchers</a></h3>
+<ul>
+<li><a href="https://tools.suckless.org/dmenu/">dmenu</a> See Also <a href="https://github.com/MarkHedleyJones/dmenu-extended">dmenu-extended</a></li>
+<li><a href="https://github.com/davatorium/rofi">rofi</a></li>
+<li><a href="https://github.com/albertlauncher/albert">albertlauncher</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#terminal-emulators" id="terminal-emulators">Terminal Emulators</a></h3>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Rxvt-unicode">urxvt(rxvt-unicode)</a></li>
+<li><a href="https://st.suckless.org/">st</a></li>
+<li><a href="https://github.com/thestinger/termite/">Termite</a></li>
+<li><a href="https://github.com/kovidgoyal/kitty">kitty</a></li>
+<li><a href="https://wiki.gnome.org/Apps/Terminal">Gnome Terminal</a></li>
+<li><a href="https://konsole.kde.org/">Konsole</a></li>
+<li><a href="https://github.com/jwilm/alacritty">Alacritty</a></li>
+<li><a href="https://invisible-island.net/xterm/xterm.html">xterm</a></li>
+</ul>
+<p>See Also <a href="https://terminal.sexy/">terminal.sexy</a></p>
+<hr />
+<h3><a class="header" href="#file-managers" id="file-managers">File Managers</a></h3>
+<ul>
+<li>
+<p>Command Line File Managers</p>
+<ul>
+<li><a href="https://github.com/ranger/ranger">ranger</a></li>
+<li><a href="https://github.com/jarun/nnn">nnn</a></li>
+<li><a href="http://midnight-commander.org/">midnight commander</a></li>
+<li><a href="https://github.com/vifm/vifm">vifm</a></li>
+<li><a href="https://github.com/dylanaraps/fff">fff</a></li>
+</ul>
+</li>
+<li>
+<p>Graphical File Managers</p>
+<ul>
+<li><a href="https://kde.org/applications/system/dolphin/">Dolphin</a></li>
+<li><a href="https://wiki.gnome.org/Apps/Files">Nautilus</a></li>
+<li><a href="https://github.com/linuxmint/nemo">Nemo</a></li>
+<li><a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3><a class="header" href="#status-bars" id="status-bars">Status Bars</a></h3>
+<ul>
+<li><a href="https://github.com/vivien/i3blocks">i3blocks</a></li>
+<li><a href="https://github.com/polybar/polybar">polybar</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#terminal-applications" id="terminal-applications">Terminal Applications</a></h3>
+<ul>
+<li>
+<p>Text Editors
+See <a href="text-editors-and-editors.html">text-editors-and-editors.md</a></p>
+</li>
+<li>
+<p>Web Browsers</p>
+<ul>
+<li><a href="http://lynx.browser.org/">lynx</a></li>
+<li><a href="https://surf.suckless.org/">surf</a></li>
+<li><a href="http://w3m.sourceforge.net/">w3m</a></li>
+</ul>
+</li>
+<li>
+<p>System Info Scripts</p>
+<ul>
+<li><a href="https://github.com/dylanaraps/neofetch">neofetch</a></li>
+<li><a href="https://github.com/KittyKatt/screenFetch">screenfetch</a></li>
+<li><a href="https://github.com/dylanaraps/pfetch">pfetch</a></li>
+</ul>
+</li>
+<li>
+<p>System Monitors</p>
+<ul>
+<li><a href="https://github.com/nicolargo/glances">glances</a> - System Monitor</li>
+<li><a href="https://github.com/brndnmtthws/conky">conky</a></li>
+</ul>
+</li>
+<li>
+<p>Other</p>
+<ul>
+<li><a href="https://github.com/Kickball/awesome-selfhosted">Kickball/awesome-selfhosted</a></li>
+<li><a href="https://github.com/tldr-pages/tldr">tldr</a> - alternative to man pages</li>
+<li><a href="https://github.com/irssi/irssi">irssi</a> - terminal irc client</li>
+<li><a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a> - Command-line program to download videos from YouTube.com and other video sites</li>
+<li><a href="http://www.mutt.org/">mutt</a> - email client</li>
+<li><a href="https://www.latex-project.org/">LaTeX</a> - document typesetting system</li>
+<li><a href="https://neomutt.org">NeoMutt</a> - highly configurable mail reader based on mutt</li>
+<li><a href="https://github.com/pwmt/zathura">zathura</a> - document viewer</li>
+<li><a href="https://github.com/mpv-player/mpv">mpv</a> - Command line video player</li>
+<li><a href="https://github.com/michael-lazar/rtv">rtv(unmaintained)</a> - reddit client</li>
+<li><a href="https://www.clamav.net/">Clam AV</a> - antivirus</li>
+<li><a href="https://www.gnu.org/software/stow/manual/stow.html">Stow</a> - symlink farm manager</li>
+<li><a href="https://tiswww.case.edu/php/chet/readline/readline.html">GNU Readline Library</a></li>
+<li><a href="https://www.wireguard.com/">WireGuard</a> - fast, modern, secure VPN tunnel</li>
+<li><a href="https://www.passwordstore.org/">Pass</a> - The Standard Unix Password Manager</li>
+<li><a href="https://github.com/xgi/castero">castero</a> - TUI podcast client for the terminal</li>
+</ul>
+</li>
+</ul>
+<p>See Also: </p>
+<ul>
+<li><a href="https://dotfiles.github.io/">GitHub does dotfiles - dotfiles.github.io</a></li>
+</ul>
+<hr />
+<h3><a class="header" href="#graphical-applications" id="graphical-applications">Graphical Applications</a></h3>
+<ul>
+<li><a href="https://www.videolan.org/vlc/">VLC</a></li>
+<li><a href="https://www.libreoffice.org/">LibreOffice</a></li>
+<li><a href="https://github.com/transmission/transmission">Transmission</a> - BitTorrent client. See Also <a href="https://wiki.archlinux.org/index.php/Transmission">Transmission-cli</a>.</li>
+<li><a href="https://qbittorrent.org/">qBittorrent</a></li>
+<li><a href="https://obsproject.com/">OBS</a></li>
+<li><a href="https://blender.org/">Blender</a></li>
+<li><a href="https://gimp.org/">GIMP</a></li>
+<li><a href="https://www.audacityteam.org/">Audacity</a></li>
+<li><a href="https://inkscape.org/">Inkscape</a></li>
+<li><a href="https://www.kdenlive.org/">Kdenlive</a></li>
+<li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
+<li><a href="https://www.qemu.org/">QEMU</a></li>
+<li><a href="https://keepassxc.org/">KeePassXC</a></li>
+<li><a href="https://www.jetbrains.com/pycharm/">Pycharm-CE</a></li>
+<li><a href="https://www.jetbrains.com/idea/">IntelliJ IDEA-CE</a></li>
+<li><a href="https://calibre-ebook.com/">Calibre</a></li>
+<li><a href="https://qutebrowser.org/">qutebrowser</a> - browser with vim-like keybindings.</li>
+<li><a href="https://www.winehq.org/">Wine</a> - compatibility layer capable of running Windows applications on POSIX-compliant operating systems.</li>
+</ul>
+<p>See Also <a href="https://wiki.archlinux.org/index.php/List_of_applications">List of Applications - ArchWiki</a>.</p>
+<hr />
+<h3><a class="header" href="#youtube-channels" id="youtube-channels">YouTube Channels</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA">Luke Smith</a> - Luke Smith</li>
+<li><a href="https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg">DistroTube</a> - Derek Taylor</li>
+</ul>
+<hr />
+<h3><a class="header" href="#extra-resources" id="extra-resources">Extra Resources</a></h3>
+<ul>
+<li><a href="http://tmuxcheatsheet.com/">Tmux Cheat Sheet &amp; Quick Reference</a></li>
+<li><a href="http://readline.kablamo.org/vi.html">GNU Readline Cheatsheet- VI Mode</a>(<a href="http://readline.kablamo.org/emacs.html">Emacs Mode</a>)</li>
+<li><a href="https://crontab.guru/">crontab guru</a></li>
+<li><a href="https://livecdlist.com/about/">The LiveCD List</a></li>
+<li><a href="https://linuxjourney.com/">Linux Journey</a> - Learn the ways of Linux-fu, for free</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../docs/coding-challenges.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../docs/science-technology-and-mathematics.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../docs/coding-challenges.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../docs/science-technology-and-mathematics.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

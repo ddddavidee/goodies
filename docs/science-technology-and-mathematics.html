@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Science, Technology and Mathematics - rsapkf/goodies</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> goodies</a></li><li class="expanded "><a href="../index.html"><strong aria-hidden="true">2.</strong> docs/</a></li><li><ol class="section"><li class="expanded "><a href="../docs/web-development.html"><strong aria-hidden="true">2.1.</strong> Web Development</a></li><li class="expanded "><a href="../docs/coding-challenges.html"><strong aria-hidden="true">2.2.</strong> Coding Challenges</a></li><li class="expanded "><a href="../docs/linux-configuration.html"><strong aria-hidden="true">2.3.</strong> Linux Configuration</a></li><li class="expanded "><a href="../docs/science-technology-and-mathematics.html" class="active"><strong aria-hidden="true">2.4.</strong> Science, Technology and Mathematics</a></li><li class="expanded "><a href="../docs/software-tools.html"><strong aria-hidden="true">2.5.</strong> Software Tools</a></li><li class="expanded "><a href="../docs/moocs-and-courses.html"><strong aria-hidden="true">2.6.</strong> Massive Open Online Courses</a></li><li class="expanded "><a href="../docs/cubing-and-puzzles.html"><strong aria-hidden="true">2.7.</strong> Cubing and Puzzles</a></li><li class="expanded "><a href="../docs/random-cool-sites.html"><strong aria-hidden="true">2.8.</strong> Random Cool Sites</a></li><li class="expanded "><a href="../docs/privacy-tools.html"><strong aria-hidden="true">2.9.</strong> Privacy Tools</a></li><li class="expanded "><a href="../docs/github-gitlab-stars.html"><strong aria-hidden="true">2.10.</strong> GitHub/GitLab Stars</a></li><li class="expanded "><a href="../docs/free-to-read-books.html"><strong aria-hidden="true">2.11.</strong> Free to Read Books</a></li><li class="expanded "><a href="../docs/high-school.html"><strong aria-hidden="true">2.12.</strong> High School</a></li><li class="expanded "><a href="../docs/ebooks-and-research-papers.html"><strong aria-hidden="true">2.13.</strong> Ebooks and Research Papers</a></li><li class="spacer"></li></ol></li><li class="expanded "><a href="../CONTRIBUTING.html">CONTRIBUTING</a></li><li class="expanded affix "><a href="../LICENSE.html">LICENSE</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">rsapkf/goodies</h1>
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/rsapkf/goodies" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#science-technology-and-mathematics" id="science-technology-and-mathematics">Science, Technology and Mathematics</a></h1>
+<h2><a class="header" href="#science-mostly" id="science-mostly">Science, Mostly</a></h2>
+<ul>
+<li>
+<p>YouTube/</p>
+<ul>
+<li><a href="https://www.youtube.com/channel/UC6nSFpj9HTCZ5t-N3Rm3-HA">Vsauce</a> - Michael Stevens</li>
+<li><a href="https://www.youtube.com/channel/UCqmugCqELzhIMNYnsjScXXw">Vsauce2</a> - Kevin Lieber</li>
+<li><a href="https://www.youtube.com/channel/UCwmFOfFuvRPI112vR5DNnrA">Vsauce3</a> - Jake Roper</li>
+<li><a href="https://www.youtube.com/channel/UClq42foiSgl7sSpLupnugGA">D!NG</a> -  Michael Stevens, Kevin Lieber, Jake Roper</li>
+<li><a href="https://www.youtube.com/channel/UCY1kMZp36IQSyNx_9h4mpCg">Mark Rober</a> - Mark Rober</li>
+<li><a href="https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA">Veritasium</a> - Derek Muller</li>
+<li><a href="https://www.youtube.com/user/2veritasium">2Veritasium</a> - Derek Muller</li>
+<li><a href="https://www.youtube.com/user/destinws2">Smarter Everyday</a> - Destin Sandlin</li>
+<li><a href="https://www.youtube.com/channel/UC0tq0g5u2bo-TErZt7SJM6w">The Sound Traveler</a> - Destin Sandlin</li>
+<li><a href="https://www.youtube.com/channel/UCvBqzzvUBLCs8Y7Axb-jZew">Sixty Symbols</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/user/numberphile">Numberphile</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCtwKon9qMt5YLVgQt1tvJKg">Objectivity</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCtESv1e7ntJaLJYKIO1FoYw">Periodic Videos</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCo-3ThNQmPmQSQL_L6Lx1_w">Deep Sky Videos</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q">Kurzgesagt - In a Nutshell</a> - Kurzgesagt</li>
+<li><a href="https://www.youtube.com/channel/UCC552Sd-3nyi_tk2BudLUzA">AsapSCIENCE</a> - Mitchell Moffit, Gregory Brown</li>
+<li><a href="https://www.youtube.com/channel/UCUHW94eEFW7hkUMVaZz4eDg">minutephysics</a> - Henry Reich</li>
+<li><a href="https://www.youtube.com/user/minuteearth/featured">MinuteEarth</a> - Henry Reich</li>
+<li><a href="https://www.youtube.com/channel/UCJ0-OtVpF0wOKEqT2Z1HEtA">ElectroBOOM</a> - Mehdi Sadaghdar</li>
+<li><a href="https://www.youtube.com/channel/UCxzC4EngIsMrPmbm6Nxvb-A">Scott Manley</a> - Scott Manley</li>
+<li><a href="https://www.youtube.com/channel/UCZYTClx2T1of7BRZ86-8fow">SciShow</a> - Hank Green</li>
+<li><a href="https://www.youtube.com/channel/UCLA_DiR1FfKNvjuUpBHmylQ">NASA</a>, obviously</li>
+<li><a href="https://www.youtube.com/channel/UC7DdEm33SyaTDtWYGO2CwdA">Physics Girl</a> - Dianna Cowern</li>
+<li><a href="https://www.youtube.com/channel/UC2C_jShtL725hvbm1arSV9w">CGP Grey</a> - CGP Grey</li>
+<li><a href="https://www.youtube.com/channel/UC06E4Y_-ybJgBUMtXx8uNNw">TheBackyardScientist</a> - Kevin from TheBackyardScientist :)</li>
+<li><a href="https://www.youtube.com/channel/UCIRiWCPZoUyZDbydIqitHtQ">Mike Boyd</a> - Mike Boyd</li>
+<li><a href="https://www.youtube.com/channel/UC1VLQPn9cYSqx8plbk9RxxQ">The Action Lab</a> -  @theactionlabman</li>
+<li><a href="https://www.youtube.com/user/BreakingTrail">Brave Wilderness</a> - Coyote Peterson</li>
+<li><a href="https://www.youtube.com/channel/UCuCkxoKLYO_EQ2GeFtbM_bw">Half as Interesting</a> - Wendover Productions</li>
+<li><a href="https://www.youtube.com/channel/UCphTF9wHwhCt-BzIq-s4V-g">What If</a> - Hasheem Al-Ghaili</li>
+<li><a href="https://www.youtube.com/channel/UCH4BNI0-FOK2dMXoFtViWHw">It's Okay To Be Smart</a> - Dr. Joe Hanson</li>
+<li><a href="https://www.youtube.com/channel/UCUK0HBIBWgM2c4vsPhkYY4w">The Slow Mo Guys</a> - Gavin Free, Daniel Charles Gruchy</li>
+<li><a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ">Simon Giertz</a> - Simon Giertz</li>
+<li><a href="https://www.youtube.com/channel/UConVfxXodg78Tzh5nNu85Ew">Welch Labs</a> - Stephen Welch</li>
+<li><a href="https://www.youtube.com/channel/UCI4fHQkguBNW3SwTqmehzjw">DALLMYD</a> - Jake from DALLMYD</li>
+<li><a href="https://www.youtube.com/channel/UCliSRiiRVQuDfgxI_QN_Fmw">For the Allure of Physics</a> - Prof. Walter Lewin</li>
+<li><a href="https://www.youtube.com/channel/UCiEHVhv0SBMpP75JbzJShqw">Lectures by Walter Lewin. They will make you -love- Physics</a> - Prof. Walter Lewin</li>
+<li><a href="https://www.youtube.com/channel/UCZFipeZtQM5CKUjx6grh54g">Isaac Arthur</a> - Isaac Arthur</li>
+<li><a href="https://www.youtube.com/channel/UCtI0Hodo5o5dUb67FeUjDeA">SpaceX</a> - Elon Musk and Company :)</li>
+<li><a href="https://www.youtube.com/user/reigarw">Reigarw Comparisons</a></li>
+<li><a href="https://www.youtube.com/channel/UCAuUUnT6oDeKwE6v1NGQxug">TED</a></li>
+<li><a href="https://www.youtube.com/channel/UCsooa4yRKGN_zEE8iknghZA">TED-Ed</a></li>
+<li><a href="https://www.youtube.com/channel/UCsT0YIqwnpJCM-mx7-gSA4Q">TEDx Talks</a></li>
+<li><a href="https://www.youtube.com/channel/UCpVm7bg6pXKo1Pr6k5kxG9A">National Geographic</a></li>
+<li><a href="https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ">Verge Science</a></li>
+<li><a href="https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g">PBS Spacetime</a></li>
+<li><a href="https://www.youtube.com/channel/UCzR-rom72PHN9Zg7RML9EbA">PBS Eons</a></li>
+<li><a href="https://www.youtube.com/channel/UCs4aHmggTfFrpkPcWSaBN9g">PBS Infinite Series</a></li>
+<li><a href="https://www.youtube.com/channel/UC9RM-iSvTu1uPJb8X5yp3EQ">Wendover Productions</a></li>
+<li><a href="https://www.youtube.com/channel/UCYeF244yNGuFefuFKqxIAXw">The Royal Institution</a></li>
+<li><a href="https://www.youtube.com/channel/UCwmZiChSryoWQCZMIQezgTg">BBC Earth</a></li>
+</ul>
+</li>
+<li>
+<p>Sites+Blogs/</p>
+<ul>
+<li><a href="https://www.space.com/">Space.com</a></li>
+<li><a href="https://www.sciencemag.org/">ScienceMag</a></li>
+<li><a href="https://www.iflscience.com/">iflscience</a></li>
+<li><a href="https://curiosity.com/">Curiosity</a></li>
+<li><a href="https://phys.org/">phys.org</a></li>
+<li><a href="https://www.quantamagazine.org/">Quanta Magazine</a></li>
+<li><a href="https://www.newscientist.com/">New Scientist</a></li>
+<li><a href="https://www.sciencealert.com/">ScienceAlert</a></li>
+<li><a href="https://futurism.com/">Futurism</a></li>
+<li><a href="https://www.popsci.com/">Popular Science</a></li>
+<li><a href="https://www.scientificamerican.com/">Scientific American</a></li>
+<li><a href="https://junkscience.com/">JunkScience</a></li>
+</ul>
+</li>
+<li>
+<p>Reddit/</p>
+<ul>
+<li><a href="https://old.reddit.com/r/science/">r/science</a></li>
+<li><a href="https://www.reddit.com/r/askscience/">r/askscience</a></li>
+<li><a href="https://www.reddit.com/r/todayilearned/">r/todayilearned</a></li>
+<li><a href="https://old.reddit.com/r/Physics/">r/physics</a></li>
+<li><a href="https://old.reddit.com/r/chemistry/">r/chemistry</a></li>
+<li><a href="https://www.reddit.com/r/space/">r/space</a></li>
+<li><a href="https://old.reddit.com/r/biology/">r/biology</a></li>
+<li><a href="https://old.reddit.com/r/Astronomy/">r/Astronomy</a></li>
+<li><a href="https://old.reddit.com/r/environment/">r/environment</a></li>
+<li><a href="https://www.reddit.com/r/astrophotography/">r/astrophotography</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#mathematics" id="mathematics">Mathematics</a></h2>
+<ul>
+<li>
+<p>YouTube/</p>
+<ul>
+<li><a href="https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A">Numberphile1</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCyp1gCHZJU_fGWFf2rtMkCg">Numberphile2</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> - Grant Sanderson</li>
+<li><a href="https://www.youtube.com/channel/UC1_uAIS3r8Vu6JjXWvastJg">Mathologer</a> - Burkard Polster</li>
+<li><a href="https://www.youtube.com/channel/UCSju5G2aFaWMqn-_0YBtq5A">standupmaths</a> - Matt Parker</li>
+<li><a href="https://www.youtube.com/channel/UCMpizQXRt817D0qpBQZ2TlA">singingbanana</a> - James Grime</li>
+<li><a href="https://www.youtube.com/user/Vihart">Vihart</a> - Victoria Hart</li>
+</ul>
+</li>
+<li>
+<p>Sites+Blogs/</p>
+<ul>
+<li><a href="https://www.wolframalpha.com/">WolframAlpha</a></li>
+<li><a href="http://mathworld.wolfram.com/">Wolfram MathWorld</a> - The Web's Most Extensive Mathematics Resource</li>
+<li><a href="https://www.angio.net/pi/">The Pi-Search Page</a></li>
+<li><a href="https://betterexplained.com/">Better Explained</a> - Finally understand math, don't memorize it.</li>
+<li><a href="https://makeanddo4d.com/">Things to Make and Do in the Fourth Dimension</a></li>
+<li><a href="https://www.mersenne.org/">Great Internet Mersenne Prime Search - PrimeNet</a></li>
+<li><a href="https;//terrytao.wordpress.com">Terrence Tao's Blog</a></li>
+<li><a href="https://www.kleinbottle.com/">Acme Klein Bottle</a> - Official Store of the 'Klein Bottle Guy' aka Clifford Stoll</li>
+<li><a href="http://www.lmfdb.org/">LMFDB - The L-functions and modular forms database</a></li>
+<li><a href="https://brilliant.org/">Brilliant</a> <code>paid</code></li>
+<li><a href="https://mathprofessorquotes.com/">Math Professor Quotes</a> - The absurd things math professors say.</li>
+<li><a href="https://www.symbolab.com">Symbolab</a> - Symbolab Math Solver.</li>
+<li><a href="https://www.symbolab.com/cheat-sheets#">Symbolab Cheat Sheets</a> - Algebra, Trigonometry, Calculus.</li>
+<li><a href="https://www2.stetson.edu/%7Eefriedma/numbers.html">What's Special About This Number?</a> - What's Special About This Number?</li>
+<li><a href="https://oeis.org/wiki/Annotated_version_of_%22What%27s_Special_About_This_Number%3F%22_(Part_0)">Annotated version of &quot;What's Special About This Number?&quot;</a></li>
+<li><a href="https://oeis.org/">The On-Line Encyclopedia of Integer Sequences(OEIS)</a> - </li>
+<li><a href="https://www.desmos.com/calculator">Desmos Graphing Calculator</a></li>
+<li><a href="http://tutorial.math.lamar.edu/">Paul's Online Notes</a> - a complete set of free online (and downloadable) notes/tutorials for classes that Prof. Paul Dawkins teaches at Lamar University.</li>
+<li><a href="https://www2.stetson.edu/%7Eefriedma/index.html">Erich's Place</a> - Prof. Erich Friedman's Place.</li>
+<li><a href="https://www.3blue1brown.com/">3blue1brown</a> - By Grant Sanderson.</li>
+</ul>
+</li>
+<li>
+<p>Reddit/</p>
+<ul>
+<li><a href="https://www.reddit.com/r/learnmath/comments/8p922p/list_of_websites_ebooks_downloads_etc_for_mobile/?utm_source=share&amp;utm_medium=web2x">r/learnmath</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#tech" id="tech">Tech:</a></h2>
+<ul>
+<li>
+<p>YouTube/</p>
+<ul>
+<li><a href="https://www.youtube.com/channel/UCXuqSBlHAE6Xw-yeJA0Tunw">Linus Tech Tips</a> - Linus Sebastian</li>
+<li><a href="https://www.youtube.com/channel/UC2eYFnH61tmytImy1mTYvhA">Luke Smith</a> - Luke Smith</li>
+<li><a href="https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg">DistroTube</a> - Derek Taylor</li>
+<li><a href="https://www.youtube.com/channel/UC0vBXGSyV14uvJ4hECDOl0Q">Techquikie</a> - Linus Sebastian</li>
+<li><a href="https://www.youtube.com/channel/UCeeFfhMcJa1kjtfZAGskOCA">TechLinked</a> - Linus Sebastian</li>
+<li><a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A">Tom Scott</a> - Tom Scott</li>
+<li><a href="https://www.youtube.com/channel/UCsTcErHg8oDvUnTzoqsYeNw">Unbox Therapy</a> - Lewis Hilsenteger</li>
+<li><a href="https://www.youtube.com/channel/UCBJycsmduvYEL83R_U4JriQ">Marquees Brownlee</a> - Marquees Brownlee</li>
+<li><a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA">Computerphile</a> - Brady Haran</li>
+<li><a href="https://www.youtube.com/channel/UCVYamHliCI9rw1tHR1xbkfw">Dave Lee</a>- Dave Lee</li>
+<li><a href="https://www.youtube.com/channel/UC4QZ_LsYcvcq7qOsOhpAX4A">ColdFusion</a> - Dagogo Altraide</li>
+<li><a href="https://www.youtube.com/channel/UC726J5A0LLFRxQ0SZqr2mYQ">Curious Droid</a> - Paul Shillito</li>
+<li><a href="https://www.youtube.com/channel/UCgNg3vwj3xt7QOrcIDaHdFg">PolyMatter</a> - Evan from Polymatter :)</li>
+<li><a href="https://www.youtube.com/channel/UC42VsoDtra5hMiXZSsD6eGg">The Modern Rogue</a> - Brian Brushwood, Jason Murphy</li>
+<li><a href="https://www.youtube.com/channel/UCQSpnDG3YsFNf5-qHocF-WQ">ThioJoe</a> - ThioJoe</li>
+<li><a href="https://www.youtube.com/channel/UCEOXxzW2vU0P-0THehuIIeg">Captain Disillusion</a> - Captain Disillusion :)</li>
+<li><a href="https://www.youtube.com/channel/UCjr2bPAyPV7t35MvcgT3W8Q">The Hated One</a></li>
+<li><a href="https://www.youtube.com/channel/UCgyqtNWZmIxTx3b6OxTSALw">Android Authority</a></li>
+<li><a href="https://www.youtube.com/channel/UCK8sQmJBp8GCxrOtXWBpyEA">Google</a></li>
+<li><a href="https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw">Google Developers</a></li>
+<li><a href="https://www.youtube.com/channel/UCvA_wgsX6eFAOXI8Rbg_WiQ">tutoriaLinux</a> - Dave Cohen</li>
+</ul>
+</li>
+<li>
+<p>Reddit/</p>
+<ul>
+<li><a href="https://www.reddit.com/r/technology/">r/technology</a></li>
+</ul>
+</li>
+<li>
+<p>Sites+Blogs/</p>
+<ul>
+<li>
+<p>Privacy</p>
+<ul>
+<li><a href="https://www.gnu.org/">gnu.org</a></li>
+<li><a href="https://thatoneprivacysite.net/about/">That One Privacy Site</a></li>
+<li><a href="https://stallman.org/index.html">Richard Stallman's Personal Site </a></li>
+<li><a href="https://wikileaks.org">WikiLeaks</a></li>
+<li><a href="https://www.securemessagingapps.com/">Secure Messaging Apps Comparison</a></li>
+<li><a href="https://spreadprivacy.com/">DuckDuckGo Blog</a></li>
+<li><a href="https://www.eff.org/">EFF Blog</a></li>
+<li><a href="https://learning.mozilla.org/en-US/activities">The Mozilla Learning Network</a></li>
+<li><a href="https://www.tutanota.com/blog">Tutanota Blog</a></li>
+<li><a href="https://protonmail.com/blog/">ProtonMail Blog</a></li>
+<li><a href="https://blog.mozilla.org/">Mozilla Blog</a></li>
+<li><a href="https://hacks.mozilla.org/">Mozilla Hacks</a></li>
+<li><a href="https://nordvpn.com/blog/">NordVPN Blog</a></li>
+<li><a href="https://www.expressvpn.com/blog/">ExpressVPN Blog</a></li>
+</ul>
+</li>
+<li>
+<p>Blogs</p>
+<ul>
+<li><a href="https://distill.pub/">Distill</a> - articles about machine learning</li>
+<li><a href="https://jvns.ca/">Julia Evans</a></li>
+<li><a href="https://stackoverflow.blog/">StackOverflow Blog</a></li>
+<li><a href="https://www.twilio.com/blog">Twilio Blog</a></li>
+<li><a href="https://blog.codinghorror.com/">Coding Horror</a></li>
+<li><a href="https://backreaction.blogspot.com/">Sabine Hossenfelder: Backreaction</a></li>
+<li><a href="https://www.kalzumeus.com/">Kalzumeus by Patrick McKenzie</a></li>
+<li><a href="https://snarky.ca/">Brett Cannon</a></li>
+<li><a href="https://neopythonic.blogspot.com/">Neopythonic by Guido van Rossum</a></li>
+<li><a href="https://www.sarasoueidan.com/">Sara Soueidan's Blog</a></li>
+<li><a href="https://2ality.com/">2ality by Dr. Axel Rauschmayer</a> - JavaScript and more.</li>
+</ul>
+</li>
+<li>
+<p>Medium Blogs</p>
+<ul>
+<li><a href="https://instagram-engineering.com/">Instagram Engineering</a></li>
+<li><a href="https://medium.com/@evanselinger">Evan Selinger</a></li>
+<li><a href="https://medium.com/@blakeross">Blake Ross</a></li>
+<li><a href="https://medium.com/@sindresorhus">Sindre Sorhus</a></li>
+<li><a href="https://medium.com/@NetflixTechBlog">Netflix Technology Blog</a></li>
+<li><a href="https://medium.com/netflix-techblog">Netflix TechBlog</a></li>
+<li><a href="https://blog.discordapp.com/">Discord Blog</a></li>
+<li><a href="https://medium.com/basecs">basecs</a> - Exploring the basics of computer science.</li>
+</ul>
+</li>
+<li>
+<p>NerdStuff:</p>
+<ul>
+<li><a href="http://www.catb.org/%7Eesr/">The Cathedral and the Bazaar</a></li>
+<li><a href="https://distrowatch.com/dwres.php?resource=about">DistroWatch</a></li>
+<li><a href="https://www.kottke.org">kottke.org</a> - Home of Fine HyperText Products</li>
+<li><a href="https://distrochooser.de/en">distrochooser</a> - guide for Linux beginners to choosing a suitable Linux distribution.</li>
+<li><a href="https://www.howtogeek.com/">HowToGeek</a></li>
+<li><a href="https://waitbutwhy.com/">Wait But Why</a></li>
+<li><a href="http://wiki.secretgeek.net/About">secretGeekWiki</a></li>
+<li><a href="https://itsfoss.com/">It's FOSS</a></li>
+<li><a href="http://www.logicalincrements.com/">Logical Increments</a> - PC building guides</li>
+</ul>
+</li>
+<li>
+<p>Miscellaneous:</p>
+<ul>
+<li><a href="https://news.ycombinator.com/">Hacker News</a>(<a href="https://news.ycombinator.com/bookmarklet.html">Submit to HN bookmarklet</a>)</li>
+<li><a href="https://lobste.rs/">Lobsters</a></li>
+<li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+<li><a href="http://n-gate.com/">n-gate.com</a> - we can't both be right.</li>
+<li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a> - For Web Designers And Developers.</li>
+<li><a href="https://hckrnews.com">hckrnews.com</a> - Hacker News sorted by time</li>
+<li><a href="https://news.python.sc/">Pythonic News</a></li>
+<li><a href="https://reddit.com/">Reddit</a></li>
+<li><a href="https://www.slashdot.org/">Slashdot</a></li>
+<li><a href="https://stratechery.com/">Stratechery by Ben Thompson</a></li>
+<li><a href="https://dev.to/">dev.to</a></li>
+<li><a href="https://www.indiehackers.com/">Indie Hackers</a></li>
+<li><a href="https://medium.com/">Medium</a></li>
+<li><a href="https://www.fossjobs.net/">fossjobs.net</a></li>
+<li><a href="https://www.linux.com/">Linux.com</a> - resource for open source professionals to learn about the latest in Linux and open source technology.</li>
+<li><a href="https://www.howtoforge.com/">HowtoForge</a> - Linux Tutorials.</li>
+<li><a href="https://www.tldp.org/">tldp.org</a> - The Linux Documentation Project.</li>
+<li><a href="https://lwn.net/">LWN.net</a> - News from the source.</li>
+<li><a href="https://www.technologyreview.com/">MIT Technology Review</a></li>
+<li><a href="https://opensource.facebook.com/">Facebook Open Source </a></li>
+<li><a href="https://twitter.github.io/">Twitter Open Source</a></li>
+<li><a href="https://venturehacks.com/">Venture Hacks</a> - Advice for startups</li>
+<li><a href="https://engineering.fb.com/">Facebook Engineering</a></li>
+<li><a href="https://opensource.google/">Google Open Source</a></li>
+<li><a href="https://developers.googleblog.com/">Google Developers Blog</a></li>
+<li><a href="https://www.space.com/">Space.com</a> - NASA, Space Exploration and Astronomy News</li>
+<li><a href="http://www.paulgraham.com/articles.html">The Blog of Paul Graham</a></li>
+<li><a href="https://www.reuters.com">REUTERS</a></li>
+<li><a href="https://arstechnica.com/">Ars Technica</a></li>
+<li><a href="https://techcrunch.com/">TechCrunch</a></li>
+<li><a href="https://hbr.org/">Harvard Business Review</a></li>
+<li><a href="https://stratechery.com">Stratechery</a></li>
+<li><a href="https://serializer.io">Serializer</a></li>
+<li><a href="https://www.howtogeek.com/">How-To-Geek</a></li>
+<li><a href="https://www.engadget.com/">Engadget</a></li>
+<li><a href="https://www.ycombinator.com">YCombinator</a></li>
+<li><a href="https://boingboing.net/">BoingBoing</a></li>
+<li><a href="https://lifehacker.com/">lifehacker</a></li>
+<li><a href="https://www.makeuseof.com/">MakeUseOf</a></li>
+<li><a href="https://www.fastcompany.com/">Fast Company</a></li>
+<li><a href="https://www.howstuffworks.com/">HowStuffWorks</a></li>
+<li><a href="https://aeon.co/">aeon</a> - Essays, Ideas, Videos</li>
+<li><a href="https://lifewire.com">lifewire</a></li>
+</ul>
+</li>
+<li>
+<p>Hacking</p>
+<ul>
+<li><a href="https://null-byte.wonderhowto.com/">Null Byte</a></li>
+<li><a href="https://portswigger.net/web-security">Web Security Academy</a> - Cybersecurity Training from PortSwigger</li>
+<li><a href="https://objective-see.com/index.html">Objective-See</a></li>
+</ul>
+</li>
+<li>
+<p>Comics</p>
+<ul>
+<li><a href="https://www.xkcd.com/">xkcd Comics</a></li>
+<li><a href="http://phdcomics.com/">PHD Comics</a></li>
+</ul>
+</li>
+<li>
+<p>People</p>
+<ul>
+<li><a href="https://www.bell-labs.com/usr/dmr/www/">Dennis Ritchie Home Page</a></li>
+<li><a href="https://www-cs-faculty.stanford.edu/%7Eknuth/">Don Knuth's Home Page</a></li>
+<li><a href="http://paulgraham.com/">Paul Graham</a></li>
+<li><a href="http://gatesnotes.com/">Gates Notes</a></li>
+<li><a href="http://www.catb.org/esr/">Eric S. Raymond's Home Page</a></li>
+<li><a href="https://www.stallman.org/">Richard Stallman's Personal Page</a></li>
+<li><a href="http://www.stroustrup.com/index.html">Bjarne Stroustrup's Homepage</a></li>
+<li><a href="https://www.stephenwolfram.com/">Stephen Wolfram: Official Website</a></li>
+<li><a href="https://scottmeyers.blogspot.com/">The View from Aristeia- Scott Mayer's Blog</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Julian_Assange">Julian Assange</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Edward_Snowden">Edward Snowden</a></li>
+<li><a href="http://norvig.com/">Peter Norwig</a></li>
+<li><a href="https://www.crockford.com/">Douglas Crockford's Webpage</a></li>
+<li><a href="https://bellard.org/">Fabrice Bellard's Home Page</a></li>
+<li><a href="https://tiswww.case.edu/php/chet/">Chet Ramey's Home Page</a></li>
+<li><a href="https://sindresorhus.com/">Sindre Sorhus</a></li>
+<li><a href="https://www.kennethreitz.org/">Kenneth Reitz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../docs/linux-configuration.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../docs/software-tools.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../docs/linux-configuration.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../docs/software-tools.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
